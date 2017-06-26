@@ -1,0 +1,109 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Nov 4, 2016, 4:56:45 PM
+    Author     : smorris
+*/
+
+table{
+    font-size: 11px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+table,td,th{
+    border: 1px solid black;
+    border-collapse: collapse;
+    vertical-align: top;
+}
+
+tr.even{
+    background-color:white;
+}
+
+tr.odd{
+    background-color:#eee;
+}
+
+p,a{
+    font-size: 11px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+table.vuln_output {
+    width: 900px;
+}
+
+td.vuln_output{
+    vertical-align: top;
+}
+
+a.download{
+    font-size:16px;
+    font-weight: 900;
+}
+
+a:link, a:visited {
+    color: darkblue;
+    text-decoration: none;
+}
+
+a:hover {
+    color: gray;
+    text-decoration: underline;
+}
+
+a:active {
+    color: blue;
+    text-decoration: underline;
+}
+
+td.vuln_title{
+    background-color:lightseagreen;
+}
+
+td.vuln_id{
+    font-weight: 900;
+    background-color:silver;
+}
+
+td.critical{
+    background-color: #ff4141;
+}
+
+td.high{
+    background-color: #ffc947;
+}
+
+td.medium{
+    background-color: #fffb90;
+}
+
+td.low{
+    background-color: #90d7ff;
+}
+
+td.center{
+    text-align:center;
+    vertical-align:middle;
+}
+
+span.true{
+    color: green;
+    font-weight: 900;
+}
+
+span.false{
+    color: #ff4141;
+    font-weight: 900;
+}
+
+p.message{
+    color: dodgerblue;
+    font-weight: 900;
+}
