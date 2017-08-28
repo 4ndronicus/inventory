@@ -105,8 +105,8 @@ class dbConn {
      */
     function __construct() {
         $this->dbserver = "localhost";
-        $this->dbuser = "root";
-        $this->dbpass = "!@MountainF0551l#$";
+        $this->dbuser = "";
+        $this->dbpass = "";
         $this->dbname = "vulns";
         $this->numrows = 0;
         $this->mode = true;
