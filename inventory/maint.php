@@ -42,78 +42,37 @@ debuglog( "Current Class C: " . $class_c );
  * Figure out the location and environment if applicable
  */
 switch ( $class_c ) {
-    case "172.23.245.":
+    case "172.23.25.":
         $envtype = "Mgmt";
-    case "172.23.240.":
-    case "172.23.241.":
-    case "172.23.244.":
-    case "172.23.246.":
-        $location = "UK";
+    case "172.23.24.":
+    case "172.23.26.":
+        $location = "Dallas";
         break;
     case "10.53.140.":
         $envtype = "Mgmt";
-    case "10.53.128.":
-    case "10.255.6.":
-    case "10.53.129.":
-    case "10.53.132.":
-    case "10.53.136.":
-    case "10.53.144.":
-    case "172.16.90.":
-    case "172.16.91.":
-    case "172.16.92.":
-    case "172.16.93.":
-    case "172.16.94.":
-    case "172.16.95.":
-    case "172.23.48.":
-    case "172.23.49.":
-    case "172.23.50.":
-    case "172.23.80.":
-    case "172.23.81.":
-    case "172.23.82.":
-    case "172.23.83.":
-    case "172.23.84.":
-    case "172.23.85.":
-    case "172.23.86.":
-        $location = "New Jersey";
+    case "172.23.183.":
+    case "172.23.184.":
+    case "172.23.185.":
+    case "172.23.186.":
+        $location = "Alabama";
         break;
-    case "10.61.140.":
-    case "10.61.141.":
+    case "10.61.10.":
+    case "10.61.11.":
         $envtype = "Mgmt";
-    case "10.60.68.":
-    case "10.60.69.":
-    case "10.60.70.":
-    case "10.60.71.":
-    case "10.60.72.":
-    case "10.61.129.":
-    case "10.61.130.":
-    case "10.61.131.":
-    case "10.61.144.":
-    case "172.23.88.":
-    case "172.23.92.":
-    case "172.23.93.":
-    case "172.23.128.":
-    case "172.23.129.":
-        $location = "Lehi";
+    case "172.23.18.":
+    case "172.23.19.":
+        $location = "New Orleans";
         break;
+    case "172.23.4.":
     case "172.23.5.":
-    case "172.23.6.":
-    case "172.23.7.":
-    case "172.23.8.":
-    case "172.23.9.":
-    case "172.23.10.":
-    case "172.23.11.":
-    case "172.23.12.":
-    case "172.23.13.":
-    case "172.23.14.":
-    case "172.23.15.":
-        $location = "Lehi";
+        $location = "New York";
         $purpose = "Workstation";
         break;
-    case "172.23.249.":
-        $location = "Germany";
+    case "172.23.29.":
+        $location = "Guatemala";
         break;
-    case "10.61.156.":
-        $location = "Australia";
+    case "10.31.15.":
+        $location = "Ukraine";
         break;
 }
 
