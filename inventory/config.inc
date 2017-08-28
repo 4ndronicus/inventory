@@ -34,4 +34,5 @@ require_once( "$XWV[inc]/classCSV.php" );               //LOAD UP THE CSV MANAGE
 //
 //ALMOST EVERY PAGE WILL NEED A DATABASE OBJECT, SO LET'S JUST CREATE THAT BAD DOG HERE.
 $db = new dbConn();
+
 ?>

@@ -60,6 +60,14 @@ function cleanName($name) {
     return $name;
 }
 
+function cleanOS($os) {
+    $os=trim($os);
+    $os=strip_tags($os);
+    // Remove anything not a to z, A to Z, ', or a space
+    $os=preg_replace("/[^a-zA-Z0-9\.\(\) ]+/","",$os);
+    return $os;
+}
+
 //SANITIZES AN EMAIL ADDRESS
 function cleanEmail($email){
 	$email=strtolower(strip_tags(trim($email)));

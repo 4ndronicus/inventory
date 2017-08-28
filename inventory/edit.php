@@ -53,6 +53,8 @@ if (!isblank($_POST)) {
             . "os='" . $_POST['os'] . "', "
             . "decom=" . $decom . ", "
             . "inuse=" . $inuse . " "
+//            . "pm=" . $pm . ", "
+//            . "patched='" . $patchdate . "' "
             . "where ipaddr='" . $ipaddr . "'";
 
     if ($db->doExec($query) === true) {
@@ -91,6 +93,16 @@ $vars['purpose'] = $rec['purpose'];
 $vars['os'] = $rec['os'];
 $vars['decom'] = $rec['decom'];
 $vars['inuse'] = $rec['inuse'];
+//$vars['pm'] = $rec['pm'];
+//$vars['patched'] = $rec['patched'];
+
+
+// Has this host been patched?
+//if( $vars['patched'] == "0000-00-00" ){
+//    $vars['patched_checked'] = "";
+//}else{
+//    $vars['patched_checked'] = "checked";
+//}
 
 // which host are we looking at?
 $vars['action'] = $_SERVER['PHP_SELF'] . "?h=" . $ipaddr;
@@ -266,6 +278,15 @@ if ($rec['inuse'] == true) {
     $selected = "Yes";
 }
 $vars['sel_inuse'] = createSelect("inuse", $selected, $selarr);
+
+/*
+ *  select drop-down to set flag for whether this server is in use
+ */
+//$selected = "No";
+//if ($rec['pm'] == true) {
+//    $selected = "Yes";
+//}
+//$vars['sel_pm'] = createSelect("pm", $selected, $selarr);
 
 /*
  * Run the variables through the templating system and display the page

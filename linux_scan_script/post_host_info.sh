@@ -2,7 +2,9 @@
 # Grab a datestamp so we can name our file
 DATESTAMP=`date +%Y-%m-%d`
 
-POSTSERVER="http://[ADD YOUR WEB SERVER HERE]/maint.php?"
+# ADD THE IP OR HOSTNAME OF THE WEB SERVER BELOW
+
+POSTSERVER="http://[IP OR HOSTNAME GOES HERE]/maint.php?"
 
 # ConnectionTimeout directive for the SSH connection commands
 CONNTO=3
@@ -71,7 +73,6 @@ function getdatafor(){
 	   SERVERRET=$?
 	   SERVERNAME=`echo ${SERVERNAME} | tr [:upper:] [:lower:]`
 	   printf "${SERVERNAME}\n"
-	   printf "Last status returned: $SERVERRET\n"
 	   
 	   printf "Determining Hostname from DNS: "
 	   DNSHOSTNAME=`dig -x ${HOST} | awk '/^;; ANSWER SECTION:$/ { getline ; print $5 }' | awk -F "." '{print $1}' 2> /dev/null` > /dev/null 2>&1
@@ -107,16 +108,32 @@ function getdatafor(){
    wget -O /dev/null "${POSTURL}"
 }
 
+
 #
-# Scan this list of IPs - can place this script on each jump host and
-# configure the ip ranges as appropriate for the given jump host.
-# the server you're posting this all to must be accessible from
-# any server you are running this script on.
+# Lehi (W1) switchyard
 #
 IPBLOCK=10.20
-for i in {30..40} 50 54 55; do
+for i in {68..72} 80 84 85; do
   for j in {1..255}; do
     HOST=${IPBLOCK}.${i}.${j}
     getdatafor ${HOST} ${POSTSERVER}
   done
 done
+IPBLOCK=10.41
+for i in {128..136} 139 140 141 144 ; do
+  for j in {1..255}; do
+     HOST=${IPBLOCK}.${i}.${j}
+     getdatafor ${HOST} ${POSTSERVER}
+  done
+done
+IPBLOCK=172.28
+for i in {16..19} {27..28} {88..93} 120 121 129 192 ; do
+  for j in {1..255}; do
+     HOST=${IPBLOCK}.${i}.${j}
+     getdatafor ${HOST} ${POSTSERVER}
+  done
+done
+
+# one off servers to scan
+getdatafor 172.24.21.85 ${POSTSERVER}
+getdatafor 10.21.16.48 ${POSTSERVER}

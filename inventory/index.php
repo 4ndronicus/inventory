@@ -69,6 +69,8 @@ $vars['range_table'] = "";
 
 $header['ipaddr'] = "IP Address";
 $header['hostname'] = "Hostname";
+//$header['netbiosdomain'] = "NetBIOS Domain";
+//$header['netbiosname'] = "NetBIOS Name";
 $header['location'] = "Location";
 $header['envtype'] = "Environment";
 $header['owner'] = "Owner";
@@ -76,6 +78,13 @@ $header['product'] = "Product";
 $header['poc'] = "Contact";
 $header['purpose'] = "Purpose";
 $header['os'] = "OS";
+//$header['critical'] = "Critical";
+//$header['high'] = "High";
+//$header['medium'] = "Medium";
+//$header['low'] = "Low";
+//$header['pm'] = "PM";
+//$header['patched'] = "Patched";
+//$header['decom'] = "Decom";
 $header['macaddr'] = "MAC Address";
 $header['manuf'] = "NIC Manufacturer";
 $header['last_seen'] = "Seen";
@@ -95,12 +104,15 @@ if ( strpos( $_SERVER['REQUEST_URI'], "?" ) !== false ) {
     $vars['csv_download'] = $_SERVER['REQUEST_URI'] . "?dl=y";
 }
 
+//$vars['csv_download'] = $_SERVER['REQUEST_URI'] . "&dl=y";
 // used for getting back to this page from the edit page
 $_SESSION['LAST_RANGE'] = $_SERVER['REQUEST_URI'];
 
 
 $header['sort_by_ipaddr_link'] = $_SERVER['PHP_SELF'] . "?sort=ipaddr&h=" . $nexthow;
 $header['sort_by_hostname_link'] = $_SERVER['PHP_SELF'] . "?sort=hostname&h=" . $nexthow;
+//$header['sort_by_netbiosdomain_link'] = $_SERVER['PHP_SELF'] . "?sort=netbiosdomain&h=" . $nexthow;
+//$header['sort_by_netbiosname_link'] = $_SERVER['PHP_SELF'] . "?sort=netbiosname&h=" . $nexthow;
 $header['sort_by_location_link'] = $_SERVER['PHP_SELF'] . "?sort=location&h=" . $nexthow;
 $header['sort_by_envtype_link'] = $_SERVER['PHP_SELF'] . "?sort=envtype&h=" . $nexthow;
 $header['sort_by_owner_link'] = $_SERVER['PHP_SELF'] . "?sort=owner&h=" . $nexthow;
@@ -108,6 +120,13 @@ $header['sort_by_product_link'] = $_SERVER['PHP_SELF'] . "?sort=product&h=" . $n
 $header['sort_by_poc_link'] = $_SERVER['PHP_SELF'] . "?sort=poc&h=" . $nexthow;
 $header['sort_by_purpose_link'] = $_SERVER['PHP_SELF'] . "?sort=purpose&h=" . $nexthow;
 $header['sort_by_os_link'] = $_SERVER['PHP_SELF'] . "?sort=os&h=" . $nexthow;
+//$header['sort_by_critical_link'] = $_SERVER['PHP_SELF'] . "?sort=critical&h=" . $nexthow;
+//$header['sort_by_high_link'] = $_SERVER['PHP_SELF'] . "?sort=high&h=" . $nexthow;
+//$header['sort_by_medium_link'] = $_SERVER['PHP_SELF'] . "?sort=medium&h=" . $nexthow;
+//$header['sort_by_low_link'] = $_SERVER['PHP_SELF'] . "?sort=low&h=" . $nexthow;
+//$header['sort_by_pm_link'] = $_SERVER['PHP_SELF'] . "?sort=pm&h=" . $nexthow;
+//$header['sort_by_patched_link'] = $_SERVER['PHP_SELF'] . "?sort=patched&h=" . $nexthow;
+//$header['sort_by_decom_link'] = $_SERVER['PHP_SELF'] . "?sort=decom&h=" . $nexthow;
 $header['sort_by_macaddr_link'] = $_SERVER['PHP_SELF'] . "?sort=macaddr&h=" . $nexthow;
 $header['sort_by_manuf_link'] = $_SERVER['PHP_SELF'] . "?sort=manuf&h=" . $nexthow;
 $header['sort_by_last_seen_link'] = $_SERVER['PHP_SELF'] . "?sort=last_seen&h=" . $nexthow;
@@ -131,6 +150,8 @@ for ( $i = 0; $i < $rowct; $i++ ) {
 
     $rowvars['ipaddr'] = $ret[$i]['ipaddr'];
     $rowvars['hostname'] = $ret[$i]['hostname'];
+//    $rowvars['netbiosdomain'] = $ret[$i]['netbiosdomain'];
+//    $rowvars['netbiosname'] = $ret[$i]['netbiosname'];
     $rowvars['location'] = $ret[$i]['location'];
     $rowvars['last_seen'] = $ret[$i]['last_seen'];
     $rowvars['envtype'] = $ret[$i]['envtype'];

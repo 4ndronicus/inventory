@@ -1,7 +1,5 @@
 <?php
-/*
- * Provides ability to download reports as a CSV file
- */
+
 class CSVObj extends classBase {
 
     public function __construct() {
