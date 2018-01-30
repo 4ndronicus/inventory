@@ -4,7 +4,7 @@
 Insecure but extremely simple and quick way to gather a basic inventory of hosts on your network
 This was created using Centos 7, Apache, MariaDB, and PHP.
 
-# Quick Start #
+# Instructions #
 
 1. Create a database called "inventory".
 2. Import the .sql file into that database.
