@@ -1,7 +1,7 @@
 # inventory
 
 # Description #
-Insecure but extremely simple and quick way to gather a basic inventory of hosts on your network
+Extremely simple and quick way to gather a basic inventory of hosts on your network
 This was created using Centos 7, Apache, MariaDB, and PHP.
 
 # Instructions #
